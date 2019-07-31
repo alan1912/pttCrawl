@@ -4,8 +4,9 @@ return [
   'up' => "CREATE TABLE `CrawlUrl` (
     `id`        int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
 
+    `tagId`     int(11) unsigned NOT NULL COMMENT 'Tag ID',
     `url`       text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '網址',
-    `crawled`     enum('yes', 'no') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'no' COMMENT '已爬取',
+    `crawled`   enum('yes', 'no') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'no' COMMENT '已爬取',
 
     `updateAt`  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     `createAt`  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '新增時間',

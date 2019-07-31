@@ -17,6 +17,8 @@ return [
     'icon' => 'icon-AdminMenu-001',
     'items' => [
       ['icon' => 'icon-AdminMenu-002', 'router' => 'AdminTagIndex', 'text' => '標籤管理'],
+      ['icon' => 'icon-AdminMenu-002', 'router' => 'AdminArticleIndex', 'text' => '文章管理'],
+      ['icon' => 'icon-AdminMenu-002', 'router' => 'AdminCrawlIndex', 'text' => '爬蟲管理'],
     ]
   ],
 ];
