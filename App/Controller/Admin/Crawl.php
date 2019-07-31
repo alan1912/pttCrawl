@@ -23,4 +23,13 @@ class Crawl extends AdminController {
     return $this->view->with('table', $table);
   }
 
+  public function crawl() {
+    ifApiError(function() { return ['messages' => func_get_args()]; });
+
+    $crawlPyFile = dirname(dirname(dirname(__DIR__))).'/Tool/crawl.py';
+    $res = exec("/usr/bin/python3.6 {$crawlPyFile}");
+    if ($res === 'ok')
+      return 1;
+  }
+
 }
