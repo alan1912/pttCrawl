@@ -12,4 +12,11 @@ return [
       ['icon' => 'icon-AdminMenu-006', 'router' => 'AdminAdminAjaxErrorIndex', 'text' => '後台錯誤紀錄', 'datas' => ['label' => 'adminAjax-isRead', 'cnt' => \M\AdminAjaxError::count('isRead = ?', \M\AdminAjaxError::IS_READ_NO)]]
     ]
   ],
+  [
+    'text' => '文章管理',
+    'icon' => 'icon-AdminMenu-001',
+    'items' => [
+      ['icon' => 'icon-AdminMenu-002', 'router' => 'AdminTagIndex', 'text' => '標籤管理'],
+    ]
+  ],
 ];
