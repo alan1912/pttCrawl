@@ -17,7 +17,7 @@ echo $show->panel(function($obj) {
   foreach (\M\ArticleImage::all(['where' => ['articleId = ?', $obj->id]]) as $key => $images) {
     $num = ($key+1);
     Image::create('圖片'.$num)
-         ->val($images->img);
+         ->val((string) $images->img);
   }
 
   Datetime::create('新增時間')

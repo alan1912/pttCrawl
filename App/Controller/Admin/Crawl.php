@@ -20,6 +20,8 @@ class Crawl extends AdminController {
     // $table = Table::create('\M\Article', ['order' => Table\Order::desc('id')]);
 
     $table = [];
+    // $this->asset->addCSS();
+    $this->asset->addJS('/Asset/js/Admin/Crawl/index.js');
     return $this->view->with('table', $table);
   }
 

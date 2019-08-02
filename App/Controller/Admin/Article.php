@@ -27,11 +27,11 @@ class Article extends AdminController {
   }
 
   public function show() {
-    foreach (\M\ArticleImage::all(['where' => ['articleId = ?', $this->obj->id]]) as $images) {
-      if (preg_match("/https?/", $images->img)) {
-        $images->img->putUrl($images->img);
-      }
-    }
+    // foreach (\M\ArticleImage::all(['where' => ['articleId = ?', $this->obj->id]]) as $images) {
+    //   if (preg_match("/https?/", $images->img)) {
+    //     $images->img->putUrl($images->img);
+    //   }
+    // }
 
     $show = Show::create($this->obj)
                 ->setBackRouter('AdminArticleIndex');
