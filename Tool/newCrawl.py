@@ -67,7 +67,7 @@ class DbAccess():
 class NewCrawl():
 
     CRAWL_URL_DOMAIN = "https://www.ptt.cc"
-    CRAWL_PAGE = 1
+    CRAWL_PAGE = 5
 
     def __init__(self):
         pass
@@ -78,7 +78,6 @@ class NewCrawl():
         insertCount = self.crawlProcess()
 
         return insertCount
-        
 
     def getHtmlParserObj(self, url, cookies={}):
         r = requests.get(url, cookies=cookies)
@@ -134,6 +133,8 @@ class NewCrawl():
         for crawlUrl in crawlUrls:
             htmlObj = self.getHtmlParserObj(crawlUrl['url'], {'over18':'1'})
             images = htmlObj.find_all(string=re.compile(r'/([\w_-]+[.](jpg|gif|png))$'))
+            if (len(images) == 0):
+                continue
             tagId = crawlUrl['tagId']
             articleTitle = re.sub(r'\[.{1,}\]', '', htmlObj.find(property='og:title').get('content')).strip()
 
