@@ -12,7 +12,7 @@
         data: {},
         success: function(response) {
           $("#crawlBeauty").prop("disabled", false)
-          alert('爬取完畢')
+          alert('爬取完畢: 此次爬取 ' + response['messages'][0] + ' 筆文章')
           console.log(response);
         },
         error: function(jqXHR, textStatus, errorThrown) {

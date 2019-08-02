@@ -26,10 +26,9 @@ class Crawl extends AdminController {
   public function crawl() {
     ifApiError(function() { return ['messages' => func_get_args()]; });
 
-    $crawlPyFile = dirname(dirname(dirname(__DIR__))).'/Tool/crawl.py';
+    $crawlPyFile = dirname(dirname(dirname(__DIR__))).'/Tool/newCrawl.py';
     $res = exec("/usr/bin/python3.6 {$crawlPyFile}");
-    if ($res === 'ok')
-      return 1;
+    return $res;
   }
 
 }
